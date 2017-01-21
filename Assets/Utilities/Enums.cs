@@ -1,15 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿namespace BDB
+{
+	public enum CursorState {};
+	public enum Phase {Start, Timer, Battle, Win, Lose};
 
-public class Enums : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
