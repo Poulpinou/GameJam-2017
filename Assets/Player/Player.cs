@@ -80,7 +80,7 @@ public class Player : MonoBehaviour {
 	void Update () {
         if (energy != energy_max)
             reload_energy();
-		if (Input.GetKey(KeyCode.B))
+		if (Input.GetKeyDown(KeyCode.K))
 			trapManager.buildTrap(BDB.Trap.Magnet);
 	}
 }

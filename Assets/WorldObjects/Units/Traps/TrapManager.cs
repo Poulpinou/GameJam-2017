@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 using System.Collections;
 using BDB;
 
@@ -8,13 +9,27 @@ public class TrapManager : MonoBehaviour {
 	private Player player;
 	private Grid grid;
 	private int[] last_coordinates;
+	private List<Material> oldMaterials = new List<Material>();
+
+	[SerializeField] GameObject _magnet;
+
+	public bool get_isBuilding()
+	{
+		return is_building;
+	}
+
+	public void set_isBuilding()
+	{
+		is_building = !is_building;
+	}
 
 	private void setActiveTrap(BDB.Trap selected_trap)
 	{
 		switch (selected_trap)
 		{
 			case BDB.Trap.Magnet:
-				active_trap = new Magnet();
+				GameObject newTrap = Instantiate(_magnet);
+				active_trap = newTrap.GetComponent<Trap>();
 				break;
 			case BDB.Trap.Vibartor:
 				break;
@@ -38,11 +53,11 @@ public class TrapManager : MonoBehaviour {
 		if (check_possible(active_trap))
 		{
 			is_building = true;
-			//Assigner matériaux transparent au preview
 		}
 		else
 		{
 			is_building = false;
+			Destroy(active_trap);
 			active_trap = null;
 		}
 
@@ -113,6 +128,30 @@ public class TrapManager : MonoBehaviour {
 	}
 
 
+
+	public void SetTransparentMaterial(Material material, bool storeExistingMaterial)
+	{
+		if (storeExistingMaterial) oldMaterials.Clear();
+		Renderer[] renderers = GetComponentsInChildren<Renderer>();
+		foreach (Renderer renderer in renderers)
+		{
+			if (storeExistingMaterial) oldMaterials.Add(renderer.material);
+			renderer.material = material;
+		}
+	}
+
+	public void RestoreMaterials()
+	{
+		Renderer[] renderers = GetComponentsInChildren<Renderer>();
+		if (oldMaterials.Count == renderers.Length)
+		{
+			for (int i = 0; i < renderers.Length; i++)
+			{
+				renderers[i].material = oldMaterials[i];
+			}
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
 		is_building = false;
@@ -126,6 +165,7 @@ public class TrapManager : MonoBehaviour {
 		if (is_building)
 		{
 			place_preview();
+
 		}
 	
 	}
