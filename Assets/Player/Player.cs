@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
     public int pieces, energy, energy_max;
     public float increment_speed;
     private float increment;
+	private TrapManager trapManager;
 
 	#endregion
 
@@ -44,28 +45,12 @@ public class Player : MonoBehaviour {
 
 	#region Properties
 
-	public void set_trap(BDB.Trap trap )
-    {
-		switch (trap)
-		{
-			case BDB.Trap.Magnet:
-				break;
-			case BDB.Trap.Vibartor:
-				break;
-			case BDB.Trap.EMP:
-				break;
-			case BDB.Trap.Badaboum:
-				break;
-			case BDB.Trap.Wall:
-				break;
-			case BDB.Trap.Generator:
-				break;
-			default:
-				break;
-		}
-
-		print(trap);
+	public void set_trap(BDB.Trap trap)
+	{
+		trapManager.buildTrap(trap);
 	}
+
+
 
 	public void set_spell(BDB.Spell spell)
 	{
@@ -88,12 +73,14 @@ public class Player : MonoBehaviour {
 	#endregion
 	// Use this for initialization
 	void Start () {
-	
+		trapManager = FindObjectOfType<TrapManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (energy != energy_max)
             reload_energy();
+		if (Input.GetKey(KeyCode.B))
+			trapManager.buildTrap(BDB.Trap.Magnet);
 	}
 }

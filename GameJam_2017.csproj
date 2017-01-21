@@ -67,14 +67,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Grid\Grid.cs" />
+    <Compile Include="Assets\Grid\Square.cs" />
     <Compile Include="Assets\Player\Phases.cs" />
     <Compile Include="Assets\Player\Player.cs" />
+    <Compile Include="Assets\Utilities\EnemiesManager.cs" />
     <Compile Include="Assets\Utilities\Enums.cs" />
     <Compile Include="Assets\Utilities\GameObjectList.cs" />
+    <Compile Include="Assets\Utilities\HUD_Manager.cs" />
+    <Compile Include="Assets\Utilities\PathfinderDuPauvre.cs" />
     <Compile Include="Assets\Utilities\RessourceManager.cs" />
+    <Compile Include="Assets\Utilities\SpellButton.cs" />
+    <Compile Include="Assets\Utilities\TrapButton.cs" />
     <Compile Include="Assets\Utilities\UserInput.cs" />
     <Compile Include="Assets\Utilities\WorkManager.cs" />
+    <Compile Include="Assets\WorldObjects\Units\Enemies\Enemy.cs" />
     <Compile Include="Assets\WorldObjects\Units\Traps\Trap.cs" />
+    <Compile Include="Assets\WorldObjects\Units\Traps\TrapManager.cs" />
+    <Compile Include="Assets\WorldObjects\Units\Traps\Trap_test\Magnet.cs" />
     <Compile Include="Assets\WorldObjects\Units\Unit.cs" />
     <Compile Include="Assets\WorldObjects\WorldObject.cs" />
   </ItemGroup>
