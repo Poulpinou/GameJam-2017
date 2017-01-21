@@ -3,27 +3,17 @@ using System.Collections;
 using BDB;
 
 public class Player : MonoBehaviour {
-    public string Name;
+	#region Fields
+	public string Name;
     public int pieces, energy, energy_max;
     public float increment_speed;
     private float increment;
-    private bool is_building;
 
-    // ------- BUILD TRAP ---------
-    public void buildTrap (GameObject trap)
-    {
+	#endregion
 
-    }
-
-    public void trapPreview (GameObject trap)
-    {
-
-    }
-
-
-    //-------- RESOURCES ----------
-    //Setters
-    private void reload_energy ()
+	#region Resources
+	//Setters
+	private void reload_energy ()
     {
         increment += Time.deltaTime * increment_speed;
         if (increment > 1)
@@ -45,21 +35,59 @@ public class Player : MonoBehaviour {
         // Make later a system which can add pieces with bonus and enemies' death
     }
 
+	public int get_pieces()
+	{
+		return pieces;
+	}
 
+	#endregion
 
-    //Getters
-    public int get_pieces ()
+	#region Properties
+
+	public void set_trap(BDB.Trap trap )
     {
-        return pieces;
-    }
+		switch (trap)
+		{
+			case BDB.Trap.Magnet:
+				break;
+			case BDB.Trap.Vibartor:
+				break;
+			case BDB.Trap.EMP:
+				break;
+			case BDB.Trap.Badaboum:
+				break;
+			case BDB.Trap.Wall:
+				break;
+			case BDB.Trap.Generator:
+				break;
+			default:
+				break;
+		}
 
-    public string get_action()
-    {
-        return "Action";// Temporary get action
-    }
+		print(trap);
+	}
+
+	public void set_spell(BDB.Spell spell)
+	{
+		switch (spell)
+		{
+			case Spell.Spell1:
+				break;
+			case Spell.Spell2:
+				break;
+			case Spell.Spell3:
+				break;
+			case Spell.Spell4:
+				break;
+			default:
+				break;
+		}
+		print(spell);
+	}
+
+	#endregion
 	// Use this for initialization
 	void Start () {
-        is_building = false;
 	
 	}
 	
@@ -67,10 +95,5 @@ public class Player : MonoBehaviour {
 	void Update () {
         if (energy != energy_max)
             reload_energy();
-        if (is_building)
-            trapPreview(ResourceManager.GetUnit(get_action()));
-            
-
-	
 	}
 }
