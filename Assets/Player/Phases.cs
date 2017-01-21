@@ -1,34 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
+using BDB;
 
 public class Phases : MonoBehaviour {
-    private string actualPhase;
+    private Phase actualPhase;
     private int timer, timerLimit, actualWave;
     private float increment;
 
     public void nextPhase()
     {
-        if (actualPhase == "Start")
+        if (actualPhase == Phase.Start)
         {
             if (Input.GetKey(KeyCode.S))
             {
-                actualPhase = "Timer";
+                actualPhase = Phase.Timer;
                 timerLimit = 5; // Really equal 5 seconds? => Test
             }
         }
-        if (actualPhase == "Timer")
+        if (actualPhase == Phase.Timer)
         {
             playTimer();
             if (timer == timerLimit)
             {
-                actualPhase = "Battle";
+                actualPhase = Phase.Battle;
                 timer = 0;
             }
         }
-        if (actualPhase == "Battle")
+        if (actualPhase == Phase.Battle)
         {
             // When there is no more ennemies
-            actualPhase = "Timer";
+            actualPhase = Phase.Timer;
             timerLimit = 20;
         }
     }
@@ -43,14 +44,14 @@ public class Phases : MonoBehaviour {
         }
     }
 
-    public string getPhase()
+    public Phase getPhase()
     {
         return actualPhase;
     }
 
 	// Use this for initialization
 	void Start () {
-        actualPhase = "Start";
+        actualPhase = Phase.Start;
 	}
 	
 	// Update is called once per frame
