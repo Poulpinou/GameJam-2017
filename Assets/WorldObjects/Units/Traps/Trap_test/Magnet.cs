@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Trap : Unit {
-    public int cost, size_x, size_z;
-    public float reloadTime;
-
+public class Magnet : Trap {
 
 	// Use this for initialization
 	void Start () {
