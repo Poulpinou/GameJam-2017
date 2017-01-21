@@ -27,6 +27,8 @@ public class Phases : MonoBehaviour {
         }
         if (actualPhase == "Battle")
         {
+            // When there is no more ennemies
+            actualPhase = "Timer";
             timerLimit = 20;
         }
     }

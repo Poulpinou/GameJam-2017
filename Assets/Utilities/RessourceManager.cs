@@ -5,7 +5,7 @@ using UnityEngine;
 namespace BDB
 {
     public static class ResourceManager
-    {//Varaibles
+    {
 
         //Camera Settings
         public static float ScrollSpeed { get { return 30; } }
@@ -31,11 +31,31 @@ namespace BDB
             criticalTexture = critical;
         }
 
+        private static GameObjectList gameObjectList;
+        public static void SetGameObjectList(GameObjectList objectList) { gameObjectList = objectList; }
+
         //Bars
         private static Texture2D healthyTexture, damagedTexture, criticalTexture;
         public static Texture2D HealthyTexture { get { return healthyTexture; } }
         public static Texture2D DamagedTexture { get { return damagedTexture; } }
         public static Texture2D CriticalTexture{get { return criticalTexture; }}
-        
+
+        //Getters
+
+        public static GameObject GetUnit(string name)
+        {
+            return gameObjectList.GetUnit(name);
+        }
+
+        public static GameObject GetWorldObject(string name)
+        {
+            return gameObjectList.GetWorldObject(name);
+        }
+
+        public static GameObject GetPlayerObject()
+        {
+            return gameObjectList.GetPlayerObject();
+        }
+
     }
 }

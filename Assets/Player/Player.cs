@@ -1,13 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
+using BDB;
 
 public class Player : MonoBehaviour {
     public string Name;
     public int pieces, energy, energy_max;
     public float increment_speed;
     private float increment;
+    private bool is_building;
 
     // ------- BUILD TRAP ---------
+    public void buildTrap (GameObject trap)
+    {
+
+    }
+
+    public void trapPreview (GameObject trap)
+    {
+
+    }
 
 
     //-------- RESOURCES ----------
@@ -42,8 +53,13 @@ public class Player : MonoBehaviour {
         return pieces;
     }
 
+    public string get_action()
+    {
+        return "Action";// Temporary get action
+    }
 	// Use this for initialization
 	void Start () {
+        is_building = false;
 	
 	}
 	
@@ -51,6 +67,8 @@ public class Player : MonoBehaviour {
 	void Update () {
         if (energy != energy_max)
             reload_energy();
+        if (is_building)
+            trapPreview(ResourceManager.GetUnit(get_action()));
             
 
 	
