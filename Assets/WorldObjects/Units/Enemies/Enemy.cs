@@ -8,6 +8,11 @@ public class Enemy : Unit {
 	int index = 0;
 
 	#endregion
+
+	#region Properties
+	public BDB.Enemies _enemyName;
+
+	#endregion
 	// Use this for initialization
 	void Awake ()
 	{
