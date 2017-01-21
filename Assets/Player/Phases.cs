@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 using BDB;
 
 public class Phases : MonoBehaviour {
     private Phase actualPhase;
     private int timer, timerLimit, actualWave;
     private float increment;
+
+	public float GetTimer { get { return timer; } }
+	public event Action OnPhaseChange;
 
     public void nextPhase()
     {
@@ -32,6 +36,8 @@ public class Phases : MonoBehaviour {
             actualPhase = Phase.Timer;
             timerLimit = 20;
         }
+
+		OnPhaseChange();
     }
 
     private void playTimer()
