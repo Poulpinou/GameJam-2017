@@ -97,11 +97,19 @@ public class UserInput : MonoBehaviour {
 
     private void LeftMouseClick()
     {
-        GameObject hitObject = FindHitObject(Input.mousePosition);
-       if (hitObject.name == "Grid")
-        {
-            int[] test = hitObject.GetComponent<Grid>().get_coordinates();
-        }
+		TrapManager trap_manager = FindObjectOfType<TrapManager>();
+		if (trap_manager.get_isBuilding() == false)
+		{
+			GameObject hitObject = FindHitObject(Input.mousePosition);
+			if (hitObject.name == "Grid")
+			{
+				int[] test = hitObject.GetComponent<Grid>().get_coordinates();
+			}
+		}
+		else
+		{
+			trap_manager.set_isBuilding();
+		}
     }
 
     private void RightMouseClick()
