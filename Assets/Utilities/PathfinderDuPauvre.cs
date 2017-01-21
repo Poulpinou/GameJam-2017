@@ -13,7 +13,6 @@ public class PathfinderDuPauvre : MonoBehaviour {
 	void Update () {
 	
 	}
-
 	public BoxCollider GetPathPoint(int index)
 	{
 		if (index >= _path.Length) return null;

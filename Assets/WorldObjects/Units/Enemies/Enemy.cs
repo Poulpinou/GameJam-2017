@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Enemy : Unit {
 
@@ -20,7 +19,7 @@ public class Enemy : Unit {
 	// Update is called once per frame
 	void Update ()
 	{
-		if(_agent.remainingDistance < 0.3f)
+		if(_agent.remainingDistance < 0.4f)
 		{
 			LoadNewPathPoint();
 		}
@@ -31,12 +30,25 @@ public class Enemy : Unit {
 		BoxCollider pathPoint = _pathfinder.GetPathPoint(index);
 		if(pathPoint != null)
 		{
-			float distanceX = Random.Range(-pathPoint.transform.lossyScale.x/2, pathPoint.transform.lossyScale.x/2);
-			float distanceZ = Random.Range(-pathPoint.transform.lossyScale.z/2, pathPoint.transform.lossyScale.z/2);
+			float distanceX = UnityEngine.Random.Range(-pathPoint.transform.lossyScale.x/2, pathPoint.transform.lossyScale.x/2);
+			float distanceZ = UnityEngine.Random.Range(-pathPoint.transform.lossyScale.z/2, pathPoint.transform.lossyScale.z/2);
 			Vector3 destination = pathPoint.transform.position + pathPoint.transform.right * distanceX + pathPoint.transform.forward * distanceZ;
 			_agent.SetDestination(destination);
 			index++;
 		}
+		else
+		{
+			Destroy(this.gameObject);
+		}
 
+	}
+
+	public void SetDamages(int damages)
+	{
+		health -= damages;
+		if(health <= 0)
+		{
+			Destroy(this.gameObject);
+		}
 	}
 }
