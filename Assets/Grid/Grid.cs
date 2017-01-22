@@ -72,7 +72,19 @@ public class Grid : MonoBehaviour {
         }
     }
 
-    private void show_ground_rect()
+	public void hide_show_grid_par(bool is_building)
+	{
+		if (is_building)
+		{
+			GetComponent<Renderer>().enabled = true;
+		}
+		else if (!is_building)
+		{
+			GetComponent<Renderer>().enabled = false;
+		}
+	}
+
+	private void show_ground_rect()
     {
 
     }

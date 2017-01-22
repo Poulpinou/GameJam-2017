@@ -108,6 +108,7 @@ public class TrapManager : MonoBehaviour {
 		{
 			active_trap.SetActive = true;
 			active_trap = null;
+			is_building = false;
 		}
 	}
 
@@ -181,6 +182,7 @@ public class TrapManager : MonoBehaviour {
 			place_preview();
 
 		}
-	
+		grid.hide_show_grid_par(is_building);
+
 	}
 }
