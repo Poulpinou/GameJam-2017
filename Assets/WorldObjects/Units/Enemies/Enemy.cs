@@ -2,9 +2,11 @@
 
 public class Enemy : Unit {
 
+	public int value;
 	#region Fields
 	PathfinderDuPauvre _pathfinder;
 	NavMeshAgent _agent;
+	Player _player;
 	int index = 0;
 	float _originalSpeed;
 	float _timeOnFreeze;
@@ -24,6 +26,7 @@ public class Enemy : Unit {
 		_agent = GetComponent<NavMeshAgent>();
 		LoadNewPathPoint();
 		_originalSpeed = GetComponent<NavMeshAgent>().speed;
+		_player = FindObjectOfType<Player>();
 	}
 	
 	// Update is called once per frame
@@ -75,6 +78,7 @@ public class Enemy : Unit {
 			{
 				Destroy(this.gameObject);
 			}
+			_player.add_pieces(value);
 		}
 	}
 

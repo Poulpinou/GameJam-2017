@@ -12,4 +12,20 @@ public class Generator : Trap {
 	void Update () {
 	
 	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if(other.GetComponent<Enemy>() != null)
+		{
+			other.GetComponent<Enemy>().value *= 2;
+		}
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
+		if (other.GetComponent<Enemy>() != null)
+		{
+			other.GetComponent<Enemy>().value /= 2;
+		}
+	}
 }
