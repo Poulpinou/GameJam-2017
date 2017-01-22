@@ -25,7 +25,7 @@ public class Vibartor : Trap {
 	{
 		GameObject newWave = Instantiate(_wave);
 		newWave.transform.parent = this.transform;
-		newWave.transform.localPosition = new Vector3(0, newWave.transform.localPosition.y, 0);
+		newWave.transform.localPosition = new Vector3(0, -0.4f, 0);
 		_lastWave = Time.time;
 	}
 }

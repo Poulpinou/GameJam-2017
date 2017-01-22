@@ -31,9 +31,9 @@ public class Player : MonoBehaviour {
         pieces -= amount;
     }
 
-    public void add_pieces()
+    public void add_pieces(int value)
     {
-        // Make later a system which can add pieces with bonus and enemies' death
+		pieces += value;
     }
 
 	public int get_pieces()

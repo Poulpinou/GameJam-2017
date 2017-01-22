@@ -19,6 +19,8 @@ public class TrapManager : MonoBehaviour {
 	GameObject _generator;
 	[SerializeField]
 	GameObject _badaboum;
+	[SerializeField]
+	GameObject _vibartor;
 
 
 	public bool get_isBuilding()
@@ -41,6 +43,8 @@ public class TrapManager : MonoBehaviour {
 				active_trap = newTrap.GetComponent<Trap>();
 				break;
 			case BDB.Trap.Vibartor:
+				newTrap = Instantiate(_vibartor);
+				active_trap = newTrap.GetComponent<Trap>();
 				break;
 			case BDB.Trap.EMP:
 				newTrap = Instantiate(_emp);
