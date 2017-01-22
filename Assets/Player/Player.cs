@@ -47,6 +47,7 @@ public class Player : MonoBehaviour {
 
 	public void set_trap(BDB.Trap trap)
 	{
+		trapManager.kill_object();
 		trapManager.buildTrap(trap);
 	}
 
