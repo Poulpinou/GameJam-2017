@@ -70,12 +70,17 @@ public class Enemy : Unit {
 
 	}
 
-	public void SetDamages(int damages)
+	public virtual void SetDamages(int damages, BDB.Trap type)
 	{
-		health -= damages;
-		if(health <= 0)
+		if (type == BDB.Trap.EMP)
+			Freeze(1.0f);
+		else
 		{
-			Destroy(this.gameObject);
+			health -= damages;
+			if (health <= 0)
+			{
+				Destroy(this.gameObject);
+			}
 			_player.add_pieces(value);
 		}
 	}
@@ -91,10 +96,10 @@ public class Enemy : Unit {
 			case BDB.Trap.Vibartor:
 				break;
 			case BDB.Trap.EMP:
-				Freeze(1.0f);
+				SetDamages(5, type);
 				break;
 			case BDB.Trap.Badaboum:
-				SetDamages(1);
+				SetDamages(5, type);
 				break;
 			case BDB.Trap.Wall:
 				break;

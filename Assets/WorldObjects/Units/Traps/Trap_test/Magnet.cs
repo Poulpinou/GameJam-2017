@@ -35,7 +35,7 @@ public class Magnet : Trap {
 			{
 				if (Vector3.Distance(enemy.transform.position, transform.position) < 2.0f)
 				{
-					enemy.SetDamages(_damage);
+					enemy.SetDamages(_damage, BDB.Trap.Magnet);
 					_lastWave = Time.time;
 					enemy.Freeze(reloadTime);
 				}
