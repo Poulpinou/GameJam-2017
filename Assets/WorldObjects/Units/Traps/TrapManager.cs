@@ -17,6 +17,8 @@ public class TrapManager : MonoBehaviour {
 	GameObject _emp;
 	[SerializeField]
 	GameObject _generator;
+	[SerializeField]
+	GameObject _badaboum;
 
 
 	public bool get_isBuilding()
@@ -45,6 +47,8 @@ public class TrapManager : MonoBehaviour {
 				active_trap = newTrap.GetComponent<Trap>();
 				break;
 			case BDB.Trap.Badaboum:
+				newTrap = Instantiate(_badaboum);
+				active_trap = newTrap.GetComponent<Trap>();
 				break;
 			case BDB.Trap.Wall:
 				break;
@@ -85,9 +89,16 @@ public class TrapManager : MonoBehaviour {
 
 	public void kill_object()
 	{
-		Destroy(active_trap);
+		if (active_trap == null) return;
+		Destroy(active_trap.gameObject);
 		active_trap = null;
 		is_building = false;
+	}
+
+	public void place_object()
+	{
+		active_trap.SetActive = true;
+		active_trap = null;
 	}
 
 	private void place_preview()

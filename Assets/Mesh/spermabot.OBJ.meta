@@ -1,0 +1,123 @@
+fileFormatVersion: 2
+guid: e429ef8c670fb074e9e07df8ddb0948f
+timeCreated: 1485083852
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: spermabot:Group50264_spermabot_body
+    100004: spermabot:Group9683_spermabot_body
+    100006: spermabot:mobot_spermabot:pSphere1_spermabot:pSphere2_spermabot_body
+    100008: spermabot:mobot_spermabot:pSphere1_spermabot_body
+    100010: spermabot:mobot_spermabot_body
+    100012: spermabot_body_foot_L
+    100014: spermabot_body_foot_R
+    100016: spermabot_body_sp_ear_L
+    100018: spermabot_body_sp_ear_R
+    100020: spermabot_body_sp_heart
+    400000: //RootNode
+    400002: spermabot:Group50264_spermabot_body
+    400004: spermabot:Group9683_spermabot_body
+    400006: spermabot:mobot_spermabot:pSphere1_spermabot:pSphere2_spermabot_body
+    400008: spermabot:mobot_spermabot:pSphere1_spermabot_body
+    400010: spermabot:mobot_spermabot_body
+    400012: spermabot_body_foot_L
+    400014: spermabot_body_foot_R
+    400016: spermabot_body_sp_ear_L
+    400018: spermabot_body_sp_ear_R
+    400020: spermabot_body_sp_heart
+    2300000: spermabot:Group50264_spermabot_body
+    2300002: spermabot:Group9683_spermabot_body
+    2300004: spermabot:mobot_spermabot:pSphere1_spermabot:pSphere2_spermabot_body
+    2300006: spermabot:mobot_spermabot:pSphere1_spermabot_body
+    2300008: spermabot:mobot_spermabot_body
+    2300010: spermabot_body_foot_L
+    2300012: spermabot_body_foot_R
+    2300014: spermabot_body_sp_ear_L
+    2300016: spermabot_body_sp_ear_R
+    2300018: spermabot_body_sp_heart
+    3300000: spermabot:Group50264_spermabot_body
+    3300002: spermabot:Group9683_spermabot_body
+    3300004: spermabot:mobot_spermabot:pSphere1_spermabot:pSphere2_spermabot_body
+    3300006: spermabot:mobot_spermabot:pSphere1_spermabot_body
+    3300008: spermabot:mobot_spermabot_body
+    3300010: spermabot_body_foot_L
+    3300012: spermabot_body_foot_R
+    3300014: spermabot_body_sp_ear_L
+    3300016: spermabot_body_sp_ear_R
+    3300018: spermabot_body_sp_heart
+    4300000: spermabot:Group50264_spermabot_body
+    4300002: spermabot:Group9683_spermabot_body
+    4300004: spermabot:mobot_spermabot:pSphere1_spermabot:pSphere2_spermabot_body
+    4300006: spermabot:mobot_spermabot:pSphere1_spermabot_body
+    4300008: spermabot:mobot_spermabot_body
+    4300010: spermabot_body_foot_L
+    4300012: spermabot_body_foot_R
+    4300014: spermabot_body_sp_ear_L
+    4300016: spermabot_body_sp_ear_R
+    4300018: spermabot_body_sp_heart
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

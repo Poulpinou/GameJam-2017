@@ -6,6 +6,10 @@ public class Enemy : Unit {
 	PathfinderDuPauvre _pathfinder;
 	NavMeshAgent _agent;
 	int index = 0;
+	float _originalSpeed;
+	float _timeOnFreeze;
+	float _timeToFreeze;
+	bool _isFrozen = false;
 
 	#endregion
 
@@ -19,14 +23,26 @@ public class Enemy : Unit {
 		_pathfinder = GameObject.FindObjectOfType<PathfinderDuPauvre>();
 		_agent = GetComponent<NavMeshAgent>();
 		LoadNewPathPoint();
+		_originalSpeed = GetComponent<NavMeshAgent>().speed;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		if(_agent.remainingDistance < 0.4f)
+		if (!_isFrozen)
 		{
-			LoadNewPathPoint();
+			if (_agent.remainingDistance < 0.8f)
+			{
+				LoadNewPathPoint();
+			}
+		}
+		else
+		{
+			if(Time.time - _timeOnFreeze >= _timeToFreeze)
+			{
+				_agent.Resume();
+				_isFrozen = false;
+			}
 		}
 	}
 
@@ -55,5 +71,38 @@ public class Enemy : Unit {
 		{
 			Destroy(this.gameObject);
 		}
+	}
+
+	public void Shoot(BDB.Trap type)
+	{
+		if (_enemyName == BDB.Enemies.FatCock) return;
+
+		switch (type)
+		{
+			case BDB.Trap.Magnet:
+				break;
+			case BDB.Trap.Vibartor:
+				break;
+			case BDB.Trap.EMP:
+				Freeze(1.0f);
+				break;
+			case BDB.Trap.Badaboum:
+				SetDamages(1);
+				break;
+			case BDB.Trap.Wall:
+				break;
+			case BDB.Trap.Generator:
+				break;
+			default:
+				break;
+		}
+	}
+
+	public void Freeze(float time)
+	{
+		_agent.Stop();
+		_timeOnFreeze = Time.time;
+		_timeToFreeze = time;
+		_isFrozen = true;
 	}
 }

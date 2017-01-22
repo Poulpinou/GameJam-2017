@@ -108,7 +108,8 @@ public class UserInput : MonoBehaviour {
 		}
 		else
 		{
-			trap_manager.kill_object();
+			trap_manager.place_object();
+			//trap_manager.kill_object();
 		}
     }
 
