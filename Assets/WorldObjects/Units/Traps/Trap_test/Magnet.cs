@@ -5,7 +5,9 @@ public class Magnet : Trap {
 
 	[SerializeField] int _maxEnemiesAttracted;
 	[SerializeField] int _damage;
+	[SerializeField] GameObject _wave;
 	List<Enemy> _attractedEnemies;
+	bool hasShield = false;
 	float _lastWave;
 	// Use this for initialization
 	void Awake () {
@@ -16,6 +18,11 @@ public class Magnet : Trap {
 	// Update is called once per frame
 	void Update ()
 	{
+		if(isActive && ! hasShield)
+		{
+			_wave.SetActive(true);
+			hasShield = true;
+		}
 		if (Time.time - _lastWave > reloadTime)
 		{
 			DealDamage();

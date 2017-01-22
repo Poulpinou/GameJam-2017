@@ -4,7 +4,7 @@ using System.Collections;
 public class Trap : Unit {
     public int cost, size_x, size_z;
     public float reloadTime;
-	bool isActive;
+	protected bool isActive;
 
 	public bool SetActive { set { isActive = value; } }
 
