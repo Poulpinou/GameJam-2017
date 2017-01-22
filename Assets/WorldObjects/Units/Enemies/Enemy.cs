@@ -7,6 +7,7 @@ public class Enemy : Unit {
 	PathfinderDuPauvre _pathfinder;
 	NavMeshAgent _agent;
 	Player _player;
+	Phases _phases;
 	int index = 0;
 	float _originalSpeed;
 	float _timeOnFreeze;
@@ -27,6 +28,7 @@ public class Enemy : Unit {
 		LoadNewPathPoint();
 		_originalSpeed = GetComponent<NavMeshAgent>().speed;
 		_player = FindObjectOfType<Player>();
+		_phases = FindObjectOfType<Phases>();
 	}
 	
 	// Update is called once per frame
@@ -63,6 +65,7 @@ public class Enemy : Unit {
 		else
 		{
 			Destroy(this.gameObject);
+			_phases.SetDamage();
 		}
 
 	}

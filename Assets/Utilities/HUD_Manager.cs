@@ -10,6 +10,7 @@ public class HUD_Manager : MonoBehaviour {
 	[SerializeField] GameObject _timer;
 	[SerializeField] GameObject _wave;
 	[SerializeField] GameObject _phaseDebug;
+	[SerializeField] GameObject _winLose;
 
 
 	#endregion
@@ -22,6 +23,7 @@ public class HUD_Manager : MonoBehaviour {
 	Slider _spellScale;
 	Text _timerText;
 	Text _waveText;
+	Text _winLoseText;
 	#endregion
 	// Use this for initialization
 	void Awake () {
@@ -33,6 +35,7 @@ public class HUD_Manager : MonoBehaviour {
 		_goldText = _goldBar.GetComponent<Text>();
 		_timerText = _timer.GetComponent<Text>();
 		_waveText = _wave.GetComponent<Text>();
+		_winLoseText = _winLose.GetComponent<Text>();
 		_spellScale = _spellSlider.GetComponent<Slider>();
 
 		OnPhaseChange();
@@ -41,7 +44,15 @@ public class HUD_Manager : MonoBehaviour {
 	void Update()
 	{
 		_goldText.text = "gold : " +  _player.get_pieces().ToString();
-		_timerText.text = _phases.GetTimer.ToString();
+		_timerText.text = ((int)_phases.GetInvertedTimer + 1).ToString();
+		if(_phases.getPhase() == BDB.Phase.Lose)
+		{
+			_winLoseText.text = "YOU LOST !!!!";
+		}
+		if (_phases.getPhase() == BDB.Phase.Win)
+		{
+			_winLoseText.text = "YOU WIN !!!!";
+		}
 	}
 	
 	public void OnPhaseChange()
@@ -56,30 +67,42 @@ public class HUD_Manager : MonoBehaviour {
 				_spellSlider.SetActive(false);
 				_timer.SetActive(false);
 				_wave.SetActive(false);
+				_winLose.SetActive(false);
 				break;
 			case BDB.Phase.Timer:
 				_goldBar.SetActive(true);
 				_spellSlider.SetActive(true);
 				_timer.SetActive(true);
 				_wave.SetActive(false);
+				_winLose.SetActive(false);
 				break;
 			case BDB.Phase.Battle:
 				_goldBar.SetActive(true);
 				_spellSlider.SetActive(true);
 				_timer.SetActive(false);
 				_wave.SetActive(true);
+				_winLose.SetActive(false);
 				break;
 			case BDB.Phase.Win:
 				_goldBar.SetActive(false);
 				_spellSlider.SetActive(false);
 				_timer.SetActive(false);
 				_wave.SetActive(false);
+				_winLose.SetActive(true);
 				break;
 			case BDB.Phase.Lose:
 				_goldBar.SetActive(false);
 				_spellSlider.SetActive(false);
 				_timer.SetActive(false);
 				_wave.SetActive(false);
+				_winLose.SetActive(true);
+				break;
+			case BDB.Phase.Survive:
+				_goldBar.SetActive(false);
+				_spellSlider.SetActive(false);
+				_timer.SetActive(false);
+				_wave.SetActive(false);
+				_winLose.SetActive(false);
 				break;
 			default:
 				break;
