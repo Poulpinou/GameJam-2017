@@ -31,7 +31,7 @@ public class VibartorWave : MonoBehaviour {
 		if(collider.GetComponent<Enemy>() != null)
 		{
 			Enemy enemy = collider.GetComponent<Enemy>();
-			enemy.SetDamages(1);
+			enemy.SetDamages(1, BDB.Trap.Vibartor);
 			enemy.GetComponent<NavMeshAgent>().speed -= _speelLoss;
 		}
 	}
@@ -41,7 +41,7 @@ public class VibartorWave : MonoBehaviour {
 		if (collider.GetComponent<Enemy>() != null)
 		{
 			Enemy enemy = collider.GetComponent<Enemy>();
-			enemy.SetDamages(1);
+			enemy.SetDamages(1, BDB.Trap.Vibartor);
 			enemy.GetComponent<NavMeshAgent>().speed += _speelLoss;
 		}
 	}
