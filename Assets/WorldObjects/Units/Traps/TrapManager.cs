@@ -93,10 +93,13 @@ public class TrapManager : MonoBehaviour {
 
 	public void kill_object()
 	{
-		if (active_trap == null) return;
-		Destroy(active_trap.gameObject);
-		active_trap = null;
-		is_building = false;
+		if (active_trap != null)
+		{
+			if (active_trap == null) return;
+			Destroy(active_trap.gameObject);
+			active_trap = null;
+			is_building = false;
+		}
 	}
 
 	public void place_object()
