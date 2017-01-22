@@ -30,7 +30,7 @@ public class Enemy : Unit {
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	public virtual void Update ()
 	{
 		if (!_isFrozen)
 		{
@@ -89,8 +89,6 @@ public class Enemy : Unit {
 
 	public void Shoot(BDB.Trap type)
 	{
-		if (_enemyName == BDB.Enemies.FatCock) return;
-
 		switch (type)
 		{
 			case BDB.Trap.Magnet:

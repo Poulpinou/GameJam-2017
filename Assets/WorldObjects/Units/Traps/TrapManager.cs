@@ -101,8 +101,11 @@ public class TrapManager : MonoBehaviour {
 
 	public void place_object()
 	{
-		active_trap.SetActive = true;
-		active_trap = null;
+		if (active_trap != null)
+		{
+			active_trap.SetActive = true;
+			active_trap = null;
+		}
 	}
 
 	private void place_preview()
@@ -112,7 +115,6 @@ public class TrapManager : MonoBehaviour {
 		{
 			last_coordinates = temp_coor;
 			calculate_coordinates();
-			calculate_range();
 
 		}
 
@@ -126,32 +128,7 @@ public class TrapManager : MonoBehaviour {
 		}
 	}
 
-	private void calculate_range()
-	{
-		remove_all_squares();
-		//float factor = grid.cellSize * 10 ;// Will may cause issues...
-		Vector3 position = active_trap.transform.position;
-		add_square(position.x - 0.5f, position.z - 0.5f);
-		if (active_trap.size_x > 1)
-		{
-			for (int i = 1; i <= (active_trap.size_x - 1); i++)
-			{
-				if (active_trap.size_z > 1)
-				{
-					for (int j = 0; j <= (active_trap.size_z - 1); j++)
-					{
-						add_square(position.x - 0.5f + i, position.z - 0.5f + j);
-					}
-				}
-			}
-		}
-    }
 
-	private void add_square (float x, float z)
-	{
-		Square square = new Square();
-		square.transform.position = new Vector3(x, -0.1f , z);
-	}
 
 	private void remove_all_squares()
 	{
