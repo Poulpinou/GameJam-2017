@@ -1,34 +1,20 @@
 fileFormatVersion: 2
-guid: 03215f24ce4a9794f82ef18594f7d55c
-timeCreated: 1485025077
+guid: 64179d8209f5de84da3fcc908e457893
+timeCreated: 1485096690
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: CINEMA_4D_Editor
-    100002: Disc
-    100004: Disc_2
-    100006: //RootNode
-    100008: Null
-    100010: Sphere
+    100002: Mur_3
+    100004: //RootNode
     400000: CINEMA_4D_Editor
-    400002: Disc
-    400004: Disc_2
-    400006: //RootNode
-    400008: Null
-    400010: Sphere
-    2300000: Disc
-    2300002: Disc_2
-    2300004: Sphere
-    3300000: Disc
-    3300002: Disc_2
-    3300004: Sphere
-    4300000: Sphere
-    4300002: Disc
-    4300004: Disc_2
-    7400000: Main
+    400002: Mur_3
+    400004: //RootNode
+    2300000: Mur_3
+    3300000: Mur_3
+    4300000: Mur_3
     9500000: //RootNode
-    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -87,7 +73,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 1
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
