@@ -136,7 +136,7 @@ public class UserInput : MonoBehaviour {
     {
         Ray ray = Camera.main.ScreenPointToRay(origin);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit)) return hit.collider.gameObject;
+        if (Physics.Raycast(ray, out hit, 10)) return hit.collider.gameObject;
         return null;
     }
 

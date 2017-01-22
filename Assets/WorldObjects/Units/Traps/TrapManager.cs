@@ -120,7 +120,10 @@ public class TrapManager : MonoBehaviour {
 
 	private void calculate_coordinates()
 	{
-		active_trap.transform.position = new Vector3(last_coordinates[0] * grid.cellSize, 0, last_coordinates[1] * grid.cellSize);
+		if (active_trap != null)
+		{
+			active_trap.transform.position = new Vector3(last_coordinates[0] * grid.cellSize, 0, last_coordinates[1] * grid.cellSize);
+		}
 	}
 
 	private void calculate_range()
