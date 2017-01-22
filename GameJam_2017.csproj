@@ -81,6 +81,8 @@
     <Compile Include="Assets\Utilities\UserInput.cs" />
     <Compile Include="Assets\Utilities\WorkManager.cs" />
     <Compile Include="Assets\WorldObjects\Units\Enemies\Enemy.cs" />
+    <Compile Include="Assets\WorldObjects\Units\Traps\Canon_Emp\EMP.cs" />
+    <Compile Include="Assets\WorldObjects\Units\Traps\Generator\Generator.cs" />
     <Compile Include="Assets\WorldObjects\Units\Traps\Trap.cs" />
     <Compile Include="Assets\WorldObjects\Units\Traps\TrapManager.cs" />
     <Compile Include="Assets\WorldObjects\Units\Traps\Trap_test\Magnet.cs" />

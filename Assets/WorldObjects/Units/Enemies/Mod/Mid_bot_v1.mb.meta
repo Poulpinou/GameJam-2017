@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: a55ac758a3a3325459215fd2389a3d5f
+timeCreated: 1485036346
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: balls
+    100002: body
+    100004: cheville
+    100006: cheville_gauche
+    100008: colonne
+    100010: cou
+    100012: cuisse
+    100014: cuisse_gauche
+    100016: ext
+    100018: ext_gauche
+    100020: genou
+    100022: genou_gauche
+    100024: hanche
+    100026: hanche_gauche
+    100028: Heart
+    100030: interm
+    100032: interm_gauche
+    100034: left
+    100036: //RootNode
+    100038: oeil
+    100040: oeil_gauche
+    100042: pied
+    100044: pied_gauche
+    100046: pupille
+    100048: pupille_gauche
+    100050: tibia
+    100052: tibia_gauche
+    100054: "t\xEAte"
+    400000: balls
+    400002: body
+    400004: cheville
+    400006: cheville_gauche
+    400008: colonne
+    400010: cou
+    400012: cuisse
+    400014: cuisse_gauche
+    400016: ext
+    400018: ext_gauche
+    400020: genou
+    400022: genou_gauche
+    400024: hanche
+    400026: hanche_gauche
+    400028: Heart
+    400030: interm
+    400032: interm_gauche
+    400034: left
+    400036: //RootNode
+    400038: oeil
+    400040: oeil_gauche
+    400042: pied
+    400044: pied_gauche
+    400046: pupille
+    400048: pupille_gauche
+    400050: tibia
+    400052: tibia_gauche
+    400054: "t\xEAte"
+    2300000: balls
+    2300002: body
+    2300004: cheville
+    2300006: cheville_gauche
+    2300008: colonne
+    2300010: cou
+    2300012: cuisse
+    2300014: cuisse_gauche
+    2300016: ext
+    2300018: ext_gauche
+    2300020: genou
+    2300022: genou_gauche
+    2300024: hanche
+    2300026: hanche_gauche
+    2300028: Heart
+    2300030: interm
+    2300032: interm_gauche
+    2300034: oeil
+    2300036: oeil_gauche
+    2300038: pied
+    2300040: pied_gauche
+    2300042: pupille
+    2300044: pupille_gauche
+    2300046: tibia
+    2300048: tibia_gauche
+    2300050: "t\xEAte"
+    3300000: balls
+    3300002: body
+    3300004: cheville
+    3300006: cheville_gauche
+    3300008: colonne
+    3300010: cou
+    3300012: cuisse
+    3300014: cuisse_gauche
+    3300016: ext
+    3300018: ext_gauche
+    3300020: genou
+    3300022: genou_gauche
+    3300024: hanche
+    3300026: hanche_gauche
+    3300028: Heart
+    3300030: interm
+    3300032: interm_gauche
+    3300034: oeil
+    3300036: oeil_gauche
+    3300038: pied
+    3300040: pied_gauche
+    3300042: pupille
+    3300044: pupille_gauche
+    3300046: tibia
+    3300048: tibia_gauche
+    3300050: "t\xEAte"
+    4300000: body
+    4300002: Heart
+    4300004: cou
+    4300006: "t\xEAte"
+    4300008: oeil
+    4300010: pupille
+    4300012: oeil_gauche
+    4300014: pupille_gauche
+    4300016: colonne
+    4300018: balls
+    4300020: interm
+    4300022: hanche
+    4300024: ext
+    4300026: cuisse
+    4300028: genou
+    4300030: tibia
+    4300032: cheville
+    4300034: pied
+    4300036: interm_gauche
+    4300038: hanche_gauche
+    4300040: ext_gauche
+    4300042: cuisse_gauche
+    4300044: genou_gauche
+    4300046: tibia_gauche
+    4300048: cheville_gauche
+    4300050: pied_gauche
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.003
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

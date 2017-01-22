@@ -108,14 +108,22 @@ public class UserInput : MonoBehaviour {
 		}
 		else
 		{
-			trap_manager.set_isBuilding();
+			trap_manager.kill_object();
 		}
     }
 
     private void RightMouseClick()
     {
-       
-    }
+		TrapManager trap_manager = FindObjectOfType<TrapManager>();
+		if (trap_manager.get_isBuilding() == false)
+		{
+			
+		}
+		else
+		{
+			trap_manager.kill_object();
+		}
+	}
 
     public static GameObject FindHitObject(Vector3 origin)
     {

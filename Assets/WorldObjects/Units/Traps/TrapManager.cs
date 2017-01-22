@@ -11,7 +11,13 @@ public class TrapManager : MonoBehaviour {
 	private int[] last_coordinates;
 	private List<Material> oldMaterials = new List<Material>();
 
-	[SerializeField] GameObject _magnet;
+	[SerializeField]
+	GameObject _magnet;
+	[SerializeField]
+	GameObject _emp;
+	[SerializeField]
+	GameObject _generator;
+
 
 	public bool get_isBuilding()
 	{
@@ -25,26 +31,30 @@ public class TrapManager : MonoBehaviour {
 
 	private void setActiveTrap(BDB.Trap selected_trap)
 	{
-		switch (selected_trap)
+		GameObject newTrap;
+        switch (selected_trap)
 		{
 			case BDB.Trap.Magnet:
-				GameObject newTrap = Instantiate(_magnet);
+				newTrap = Instantiate(_magnet);
 				active_trap = newTrap.GetComponent<Trap>();
 				break;
 			case BDB.Trap.Vibartor:
 				break;
 			case BDB.Trap.EMP:
+				newTrap = Instantiate(_emp);
+				active_trap = newTrap.GetComponent<Trap>();
 				break;
 			case BDB.Trap.Badaboum:
 				break;
 			case BDB.Trap.Wall:
 				break;
 			case BDB.Trap.Generator:
+				newTrap = Instantiate(_generator);
+				active_trap = newTrap.GetComponent<Trap>();
 				break;
 			default:
 				break;
 		}
-
 	}
 
 	public void buildTrap (BDB.Trap selected_trap)
@@ -56,9 +66,7 @@ public class TrapManager : MonoBehaviour {
 		}
 		else
 		{
-			is_building = false;
-			Destroy(active_trap);
-			active_trap = null;
+			kill_object();
 		}
 
 	}
@@ -71,7 +79,15 @@ public class TrapManager : MonoBehaviour {
 			return true;
 		}
 		else
+			kill_object();
 			return false;
+	}
+
+	public void kill_object()
+	{
+		Destroy(active_trap);
+		active_trap = null;
+		is_building = false;
 	}
 
 	private void place_preview()
