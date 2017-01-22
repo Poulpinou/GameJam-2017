@@ -6,7 +6,6 @@ public class HUD_Manager : MonoBehaviour {
 
 	#region Editor Fields
 	[SerializeField] GameObject _goldBar;
-	[SerializeField] GameObject _spellSlider;
 	[SerializeField] GameObject _timer;
 	[SerializeField] GameObject _wave;
 	[SerializeField] GameObject _phaseDebug;
@@ -20,7 +19,6 @@ public class HUD_Manager : MonoBehaviour {
 	Player _player;
 
 	Text _goldText;
-	Slider _spellScale;
 	Text _timerText;
 	Text _waveText;
 	Text _winLoseText;
@@ -36,7 +34,6 @@ public class HUD_Manager : MonoBehaviour {
 		_timerText = _timer.GetComponent<Text>();
 		_waveText = _wave.GetComponent<Text>();
 		_winLoseText = _winLose.GetComponent<Text>();
-		_spellScale = _spellSlider.GetComponent<Slider>();
 
 		OnPhaseChange();
 	}
@@ -64,42 +61,36 @@ public class HUD_Manager : MonoBehaviour {
 		{
 			case BDB.Phase.Start:
 				_goldBar.SetActive(false);
-				_spellSlider.SetActive(false);
 				_timer.SetActive(false);
 				_wave.SetActive(false);
 				_winLose.SetActive(false);
 				break;
 			case BDB.Phase.Timer:
 				_goldBar.SetActive(true);
-				_spellSlider.SetActive(true);
 				_timer.SetActive(true);
 				_wave.SetActive(false);
 				_winLose.SetActive(false);
 				break;
 			case BDB.Phase.Battle:
 				_goldBar.SetActive(true);
-				_spellSlider.SetActive(true);
 				_timer.SetActive(false);
 				_wave.SetActive(true);
 				_winLose.SetActive(false);
 				break;
 			case BDB.Phase.Win:
 				_goldBar.SetActive(false);
-				_spellSlider.SetActive(false);
 				_timer.SetActive(false);
 				_wave.SetActive(false);
 				_winLose.SetActive(true);
 				break;
 			case BDB.Phase.Lose:
 				_goldBar.SetActive(false);
-				_spellSlider.SetActive(false);
 				_timer.SetActive(false);
 				_wave.SetActive(false);
 				_winLose.SetActive(true);
 				break;
 			case BDB.Phase.Survive:
 				_goldBar.SetActive(false);
-				_spellSlider.SetActive(false);
 				_timer.SetActive(false);
 				_wave.SetActive(false);
 				_winLose.SetActive(false);

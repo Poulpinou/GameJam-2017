@@ -37,7 +37,7 @@ public class Magnet : Trap {
 				{
 					enemy.SetDamages(_damage, BDB.Trap.Magnet);
 					_lastWave = Time.time;
-					enemy.Freeze(reloadTime);
+					enemy.Freeze(reloadTime * 2);
 				}
 			}
 		}

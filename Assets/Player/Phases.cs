@@ -14,6 +14,7 @@ public class Phases : MonoBehaviour {
 	[SerializeField] float waitTimer;
 	[SerializeField] float surviveTimer;
 	[SerializeField] int _lifePoints;
+	[SerializeField] Camera _loseCamera;
 
 	public float GetInvertedTimer { get { return waitTimer - timer; } }
 	public event Action OnPhaseChange;
@@ -83,6 +84,11 @@ public class Phases : MonoBehaviour {
 		if(_lifePoints <= 0)
 		{
 			actualPhase = Phase.Lose;
+			if (Camera.main != null)
+			{
+				Camera.main.enabled = false;
+				_loseCamera.enabled = true;
+			}
 		}
 	}
 
