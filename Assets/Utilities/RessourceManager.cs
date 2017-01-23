@@ -12,11 +12,11 @@ namespace BDB
         public static float RotateSpeed { get { return 100; } }
         public static int ScrollWidth { get { return 15; } }
         public static float RotateAmount { get { return 10; } }
-        public static float MinCameraHeight { get { return 10; } }
+        public static float MinCameraHeight { get { return 5; } }
         public static float MaxCameraHeight { get { return 40; } }
 
         //Selection Settings
-        private static Vector3 invalidPosition = new Vector3(-99999, -99999, -99999);
+        private static Vector3 invalidPosition = new Vector3(-100, -100, -100);
         public static Vector3 InvalidPosition { get { return invalidPosition; } }
 
         private static Bounds invalidBounds = new Bounds(new Vector3(-99999, -99999, -99999), new Vector3(0, 0, 0));
